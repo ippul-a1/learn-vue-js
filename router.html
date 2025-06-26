@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <router-view></router-view>
+        <div>
+            <!-- router-link*2 -->
+            <router-link to="/login">Login</router-link>
+            <router-link to="/main">Main</router-link>
+        </div>
+
+    </div>
+    <!--script:src -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="https://unpkg.com/vue-router@3"></script>
+
+    <script>
+        var loginComponent = {
+            template : '<div>Login</div>'
+        }
+
+        var mainComponent = {
+            template : '<div>Main</div>'
+        }
+
+        var router = new VueRouter({
+            routes :[
+                {
+                    path : '/login',
+                    component : loginComponent
+                },
+                {
+                    path : '/main',
+                    component : mainComponent
+                }
+            ]
+
+        });
+
+        new Vue({
+            el : '#app',
+            router : router
+        });
+
+    </script>
+    
+</body>
+
+</html>
